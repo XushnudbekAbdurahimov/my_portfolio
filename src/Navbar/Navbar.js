@@ -14,9 +14,22 @@ import res1 from '../Navbar/res2.jpg'
 import res3 from '../Navbar/res3.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Toggle from "react-toggle";
 import { FaLightbulb } from "react-icons/fa";
 import { FaRegLightbulb } from "react-icons/fa";
 AOS.init();
+
+export const DarkModeToggle = () => {
+  const [isDark, setIsDark] = useState(true);
+  return (
+    <Toggle
+      checked={isDark}
+      onChange={({ target }) => setIsDark(target.checked)}
+      icons={{ checked: "🌙", unchecked: "🔆" }}
+      aria-label="Dark mode toggle"
+    />
+  );
+};
 
 
 
